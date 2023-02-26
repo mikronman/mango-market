@@ -36,6 +36,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+.bash_profile
 
 # System files
 .DS_Store
