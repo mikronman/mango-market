@@ -1,1 +1,12 @@
-<p>blog works!</p>
+<h1>Contentful Blog Data</h1>
+<p>This is a work in progress testing with headless CMS. What's below is pulled dynamically from Contentful.</p>
+
+<div *ngIf="!blogPosts || blogPosts.length === 0">
+    <p>Loading blog data...</p>
+</div>
+  
+  <div *ngFor="let post of blogPosts">
+    <h2>{{ post.blogTitle }}</h2>
+    <!-- <p *ngIf="post.author">By: {{ post.author.name }}</p>
+    <div [innerHTML]="post.body"></div> -->
+  </div>

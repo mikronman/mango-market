@@ -1,20 +1,34 @@
 import { Injectable } from '@angular/core';
-import { ContentfulClientApi, createClient } from 'contentful';
-import { environment } from 'src/environments/environment';
+import { ContentfulService } from './contentful-client'
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { Apollo, gql } from 'apollo-angular';
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class BlogService {
-  private client: ContentfulClientApi;
+  constructor(private contentfulService: ContentfulService, private apollo: Apollo) {}
 
-  constructor() {
-    this.client = createClient({
-      space: environment.contentfulSpaceId,
-      accessToken: environment.contentfulAccessToken,
-    });
+  getBlogPosts(): Observable<any> {
+    const blogPostsQuery = gql`
+      query {
+        blogPostCollection {
+          items {
+            sys {
+              id
+            }
+            blogTitle
+          }
+        }
+      }
+    `;
+
+    return this.apollo
+      .watchQuery<any>({
+        query: blogPostsQuery,
+      })
+      .valueChanges.pipe(map((result) => result.data.blogPostCollection.items));
   }
-
-  // Add methods to interact with Contentful here
 }
