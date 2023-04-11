@@ -7,7 +7,7 @@ import { UserService } from './services/users/user.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'marketplace';
+  title = 'Test App';
 
   constructor(private userService: UserService) { this.users = [];}
 

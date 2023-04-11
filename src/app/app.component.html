@@ -351,13 +351,12 @@
 
   </div>
 
-  <h2>User List</h2>
+  <h1>Database testing</h1>
+  <p>This section is for testing postgres connection and sample data.</p>
+  <p *ngFor="let user of users"><b>{{ user.first_name }}</b> - This comes from PG</p>
 
-    <ul>
-      <li *ngFor="let user of users">{{ user.first_name }}</li>
-    </ul>
 
-    <app-blog></app-blog>
+  <app-blog></app-blog>
 
   <!-- Resources -->
   <h2>Resources</h2>
