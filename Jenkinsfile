@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm ci'
+                sh 'npm i'
             }
         }
         stage('Build Angular App') {
