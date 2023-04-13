@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+        PATH = "${env.PATH}:${env.WORKSPACE}/node_modules/.bin"
         AWS_DEFAULT_REGION = 'us-east-2'
     }
 
