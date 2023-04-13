@@ -12,14 +12,22 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Clean Workspace') {
-            steps {
-                sh 'rm -rf node_modules package-lock.json'
-            }
-        }
         stage('Install Dependencies') {
             steps {
-                sh 'npm i'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'npm i'
+                }
+            }
+            post {
+                failure {
+                    script {
+                        timeout(time: 5, unit: 'MINUTES') {
+                            input message: 'An error occurred while installing dependencies. Do you want to clean the workspace and reinstall dependencies?'
+                        }
+                    }
+                    sh 'rm -rf node_modules package-lock.json'
+                    sh 'npm i'
+                }
             }
         }
         stage('Build Angular App') {
