@@ -53,13 +53,29 @@ pipeline {
                 }
             }
         }
+        // stage('Import S3 Bucket') {
+        //     steps {
+        //         dir('terraform') {
+        //             sh "terraform import -var=\"s3_bucket_name=${env.S3_BUCKET_NAME}\" -var=\"aws_region=${env.AWS_REGION}\" aws_s3_bucket.angular_app ${env.S3_BUCKET_NAME}"
+        //         }
+        //     }
+        // }
+
         stage('Import S3 Bucket') {
             steps {
                 dir('terraform') {
-                    sh "terraform import -var=\"s3_bucket_name=${env.S3_BUCKET_NAME}\" -var=\"aws_region=${env.AWS_REGION}\" aws_s3_bucket.angular_app ${env.S3_BUCKET_NAME}"
+                    script {
+                        def s3_bucket_resource = sh(script: "terraform state show aws_s3_bucket.angular_app", returnStdout: true).trim()
+                        if (s3_bucket_resource.startsWith("No state found")) {
+                            sh "terraform import -var=s3_bucket_name=${env.S3_BUCKET_NAME} -var=aws_region=${env.AWS_REGION} aws_s3_bucket.angular_app ${env.S3_BUCKET_NAME}"
+                        } else {
+                            echo "S3 bucket already imported"
+                        }
+                    }
                 }
             }
         }
+
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {
