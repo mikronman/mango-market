@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "angular_app" {
   //bucket = var.s3_bucket_name - commenting for now since I can't figure out why it's not reading my tfvars file
   bucket = "angular-bucket-mkleczka"
   //acl    = "public-read"
-  acl = "private"
+  //acl = "private"
 
   lifecycle {
     ignore_changes = [bucket]
