@@ -56,7 +56,7 @@ pipeline {
         stage('Import S3 Bucket') {
             steps {
                 dir('terraform') {
-                sh "terraform import aws_s3_bucket.angular_app ${env.S3_BUCKET_NAME}"
+                    sh "terraform import -var=\"s3_bucket_name=${env.S3_BUCKET_NAME}\" -var=\"aws_region=${env.AWS_REGION}\" aws_s3_bucket.angular_app ${env.S3_BUCKET_NAME}"
                 }
             }
         }
