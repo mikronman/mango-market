@@ -53,6 +53,13 @@ pipeline {
                 }
             }
         }
+        stage('Import S3 Bucket') {
+            steps {
+                dir('terraform') {
+                sh "terraform import aws_s3_bucket.angular_app ${env.S3_BUCKET_NAME}"
+                }
+            }
+        }
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {

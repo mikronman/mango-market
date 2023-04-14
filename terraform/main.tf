@@ -9,6 +9,9 @@ resource "aws_s3_bucket" "angular_app" {
   //acl    = "public-read"
   acl = "private"
 
+  lifecycle {
+    ignore_changes = [bucket]
+  }
   website {
     index_document = "index.html"
     error_document = "error.html"
