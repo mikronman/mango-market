@@ -9,6 +9,10 @@ This README provides instructions for deploying the Marketplace application usin
 - kubectl installed and configured to access the Kubernetes cluster
 - AWS CLI installed and configured
 
+## EKS Prerequisites
+1. eksctl create cluster -f cluster.yaml (This creates the clusters based on your yaml specs)
+2. aws eks update-kubeconfig --region us-east-2 --name my-cluster
+
 ## Steps to Deploy the Application
 
 1. Build the Docker image:

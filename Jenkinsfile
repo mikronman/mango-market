@@ -12,22 +12,33 @@ pipeline {
                 checkout scm
             }
         }
+        // stage('Install Dependencies') {
+        //     steps {
+        //         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+        //             sh 'npm i'
+        //         }
+        //     }
+        //     post {
+        //         failure {
+        //             script {
+        //                 timeout(time: 5, unit: 'MINUTES') {
+        //                     input message: 'An error occurred while installing dependencies. Do you want to clean the workspace and reinstall dependencies?'
+        //                 }
+        //             }
+        //             sh 'rm -rf node_modules package-lock.json'
+        //             sh 'npm i'
+        //         }
+        //     }
+        // }
+        stage('Clean Workspace') {
+            steps {
+                sh 'rm -rf node_modules package-lock.json'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh 'npm i'
-                }
-            }
-            post {
-                failure {
-                    script {
-                        timeout(time: 5, unit: 'MINUTES') {
-                            input message: 'An error occurred while installing dependencies. Do you want to clean the workspace and reinstall dependencies?'
-                        }
-                    }
-                    sh 'rm -rf node_modules package-lock.json'
-                    sh 'npm i'
-                }
+                sh 'npm install'
             }
         }
         stage('Build Angular App') {
