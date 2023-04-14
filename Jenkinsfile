@@ -56,7 +56,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {
-                    sh 'terraform plan -out=tfplan -var="s3_bucket_name=${env.S3_BUCKET_NAME}" -var="aws_region=${env.AWS_REGION}"'
+                    sh "terraform plan -out=tfplan -var=\"s3_bucket_name=${env.S3_BUCKET_NAME}\" -var=\"aws_region=${env.AWS_REGION}\""
                 }
             }
         }
