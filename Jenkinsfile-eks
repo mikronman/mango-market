@@ -34,8 +34,16 @@ pipeline {
         }
         stage('Authenticate to EKS Cluster') {
             steps {
-                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-                    sh 'aws eks --region us-east-2 update-kubeconfig --name my-cluster'
+                script {
+                    try {
+                        withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+                            sh 'aws eks --region us-east-2 update-kubeconfig --name my-cluster'
+                        }
+                    } catch (err) {
+                        echo "Error authenticating: ${err}"
+                        err.printStackTrace()
+                        throw err
+                    }
                 }
             }
         }
