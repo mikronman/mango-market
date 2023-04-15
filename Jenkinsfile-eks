@@ -16,9 +16,17 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def image = docker.build('mikronman/my-docker-app:latest')
-                    withDockerRegistry([url: "https://index.docker.io/v1/", credentialsId: env.DOCKER_HUB_CREDENTIALS_ID]) {
-                        image.push('latest')
+                    try {
+                        def image = docker.build('mikronman/my-docker-app:latest')
+                        echo "Docker image built successfully"
+                        withDockerRegistry([url: "https://index.docker.io/v1/", credentialsId: env.DOCKER_HUB_CREDENTIALS_ID]) {
+                            echo "Pushing Docker image to Docker Hub"
+                            image.push('latest')
+                            echo "Docker image pushed successfully"
+                        }
+                    } catch (err) {
+                        echo "Error during Docker build or push: ${err}"
+                        throw err
                     }
                 }
             }
