@@ -26,6 +26,7 @@ pipeline {
                         }
                     } catch (err) {
                         echo "Error during Docker build or push: ${err}"
+                        err.printStackTrace()
                         throw err
                     }
                 }
