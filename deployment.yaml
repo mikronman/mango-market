@@ -15,5 +15,6 @@ spec:
       containers:
       - name: marketplace
         image: mikronman/my-docker-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8081
