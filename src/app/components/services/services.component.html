@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row p-5 d-flex">
+        <div class="col-md-6 col-sm-12">
+            <div class="row services gx-1 mb-3 h-100">
+                <div class="col-12">
+                    <h1>Craft Specialties</h1>
+                    <div *ngFor="let service of services" class="service-item">
+                        <h3><fa-icon [icon]="service.icon"></fa-icon> {{service.name}}</h3>
+                        <p>{{service.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="row qualities gx-1 mb-3 h-100">
+                <div class="col-12">
+                    <h1>Detailed Service</h1>
+                    <div *ngFor="let quality of qualities" class="quality-item">
+                        <h3> <fa-icon [icon]="quality.icon"></fa-icon> {{quality.name}}</h3>
+                        <p>{{quality.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

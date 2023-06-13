@@ -1,0 +1,13 @@
+<div class="container">
+    <img class="wave" src="../../../assets/img/wave.svg"/>
+    <div class="row">
+        <h1>Unique Experiences Crafted with Integrity</h1>
+        <div class="col-md-4 col-sm-12" *ngFor="let item of values">
+            <div class="value-card">
+                <div class="img-container"><img src="{{item.icon}}"/></div>
+                <h3> {{item.title}}</h3>
+                <p>{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
