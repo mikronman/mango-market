@@ -1,6 +1,6 @@
 <nav class="navigation-bar fixed-top navbar navbar-expand-sm">
   <div class="container">
-      <a class="navbar-brand h-100" href="#">
+      <a class="navbar-brand h-100" [routerLink]="['/home']" fragment="hero">
           <img src="../assets/img/mango-logo.svg" class="mango-logo" alt="logo">
           <div class="logo-text"><span>MANGO</span></div>
       </a>
@@ -9,30 +9,31 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a class="nav-link" href="#values">About</a>
-              </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/home']" fragment="values">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" #services [routerLink]="['/home']" fragment="services">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" #portfolio [routerLink]="['/home']" fragment="portfolio">Examples</a>
+            </li>
+            <li class="nav-item">
+                  <a class="nav-link" #contact [routerLink]="['/home']" fragment="contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/blog">Blog</a>
+            </li>
+
               <!-- <li class="nav-item">
                   <a class="nav-link" href="#values">My Values</a>
               </li> -->
-              <li class="nav-item">
-                  <a class="nav-link" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#portfolio">Examples</a>
-              </li>
               <!-- <li class="nav-item">
                   <a class="nav-link" href="#price">Pricing</a>
               </li> -->
               <!-- <li class="nav-item">
                   <a class="nav-link" href="#nerds">Nerds</a>
               </li> -->
-              <li class="nav-item">
-                    <a class="nav-link" href="#pricing">Contact</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#blog">Blog</a>
-              </li>
           </ul>
       </div>
   </div>

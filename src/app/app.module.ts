@@ -15,6 +15,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PricingComponent } from './components/pricing/pricing.component';
     ServicesComponent,
     PortfolioComponent,
     FooterComponent,
-    PricingComponent
+    PricingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

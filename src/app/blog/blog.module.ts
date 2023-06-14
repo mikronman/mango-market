@@ -7,14 +7,19 @@ import { environment } from '../../environments/environment';
 import { BlogService } from '../services/cms/blog.service';
 import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { BlogPreviewComponent } from './blog-preview/blog-preview.component';
 
-
+const routes: Routes = [
+  { path: '', component: BlogPreviewComponent },
+];
 @NgModule({
   declarations: [BlogComponent],
   imports: [
     HttpClientModule,
     CommonModule,
-    ApolloModule
+    ApolloModule,
+    RouterModule.forChild(routes),
   ],
   exports: [BlogComponent],
   providers: [

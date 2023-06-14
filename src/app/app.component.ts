@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from './services/users/user.service'
 
 @Component({
@@ -7,7 +7,8 @@ import { UserService } from './services/users/user.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Test App';
+
+  title = 'Mango Design';
 
   constructor(private userService: UserService) { this.users = [];}
 
