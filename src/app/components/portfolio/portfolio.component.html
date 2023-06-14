@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row p-5">
         <div class="col-12">
-            <h1>Case Studies</h1>
-            <p>Here are a few case studies of my work I am proud to showcase.</p>
+            <h1>My Work</h1>
+            <p>Here are a few examples of my work I am happy to showcase.</p>
             <br/>
             <div class="container">
                 <ul class="nav nav-tabs">
@@ -12,12 +12,18 @@
                 </ul>
                 <div class="tab-content">
                     <div *ngFor="let tab of tabs" class="tab-pane" [class.active]="tab === activeTab">
-                        <img class="logo" src="{{tab.logo}}"/>
-                        <h4>{{tab.headline}}</h4>
-                        <p class="p-5">{{tab.body}}</p>
-                        <img class="hero" src="{{tab.image}}"/>
-                        <p class="techs">Technology: {{tab.techs}}</p>
-                        <a href="{{tab.url}}" target=_blank>Visit {{tab.name}}</a>
+                        <div class="row align-items-stretch">
+                            <div class="col-md-3 col-sm-12 d-flex flex-column justify-content-center p-3">
+                                <img class="hero" src="{{tab.image}}"/>
+                            </div>
+                            <div class="col-md-9 col-sm-12 body-wrap d-flex flex-column justify-content-center">
+                                <img class="logo" src="{{tab.logo}}"/>
+                                <h4>{{tab.headline}}</h4>
+                                <p>{{tab.body}}</p>
+                                <!-- <p class="techs">Technology: {{tab.techs}}</p> -->
+                                <a href="{{tab.url}}" target=_blank>Visit {{tab.name}}</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

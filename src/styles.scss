@@ -209,45 +209,47 @@ $secondary-color-light:#dbfffa;
   }
 
   app-pricing .container {
-    padding-top:1.5em;
+    fa-icon {
+        line-height:1.5em;
+        color:$secondary-color;
+    }
   }
 
   app-portfolio .container {
     .tab-content {
         width:100%;
-        text-align:center;
         border-bottom:1px solid #DDDDDD;
-        padding-bottom:2em;
-        .logo {
-            height:150px;
-            max-width:100%;
-            max-height:100%;
-            margin: 1.5em auto 1em auto;
-            display:block;
+        padding:2em 0;
+        .body-wrap {
+            padding:2em;
+            .logo {
+                width:250px;
+                display:block;
+                float:left;
+                margin-bottom:2em;
+            }
         }
         .hero {
-            width:800px;
+            max-height:100%;
             max-width:100%;
-            border-radius:16px;
-            display:block;
-            margin:1em auto;
+            border-radius:12px;
         }
         a {
-            display:inline-block;
+            display:block;
             color:$secondary-color;
             text-decoration:none;
-            padding:1em;
-            border-radius:8px;
             font-family:Roboto;
             font-weight:100;
+            font-size:1.25em;
             &:hover {
-                color:white;
-                background-color:$secondary-color;
+                color:$primary-color-fade;
             }
         }
         h4 {
             font-weight:100;
+            font-size:1.75em;
             font-family:Roboto;
+            margin-bottom:1em;
         }
         .techs {
             font-size:.9em;
