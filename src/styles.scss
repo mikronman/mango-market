@@ -5,11 +5,13 @@ $secondary-color:#4FB8AA;
 $primary-color-fade:#c0af7d;
 $primary-color-light:#FFF9DF;
 $secondary-color-light:#dbfffa;
+$secondary-color-dark:#478f85;
+$body-font: Roboto;
+$header-font: Amatic SC;
 
 * {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
     h1 {
-        font-family: Amatic SC;
+        font-family: $header-font;
         font-weight:700;
         font-size:3.5em;
         line-height:1em;
@@ -21,9 +23,35 @@ $secondary-color-light:#dbfffa;
         }
     }
     p {
-        font-family:roboto;
+        font-family: $body-font;
         font-size:1.25em;
         font-weight:100;
+    }
+    label {
+        font-family: $body-font;
+        font-size:.9em;
+        font-weight:400;
+    }
+    input, textarea {
+        font-family:$body-font;
+        font-size:1.1em;
+        padding:1rem!important;
+        &::placeholder {
+            font-family: $body-font;
+            font-size:1.1em;
+            font-weight:100;
+            color:#AAAAAA;
+        }
+    }
+    .btn-primary {
+        background:$secondary-color;
+        border:none;
+        padding:.5rem 3rem;
+        font-family:$header-font;
+        font-size:1.75em;
+        &:hover {
+            background:$secondary-color-dark;
+        }
     }
 }
 
@@ -76,7 +104,7 @@ $secondary-color-light:#dbfffa;
     .navbar-nav .nav-item {
         padding:0 1.5em;
         a {
-            font-family: Amatic SC;
+            font-family: $header-font;
             font-weight:bold;
             font-size:1.5em;
             &:hover {
@@ -117,7 +145,7 @@ $secondary-color-light:#dbfffa;
   .parallax-text {
     text-align:left;
     color: #333333;
-    font-family:Roboto;
+    font-family:$body-font;
     padding: 6em;
     @media (max-width:600px) {
         padding: 2.5em;
@@ -165,7 +193,7 @@ $secondary-color-light:#dbfffa;
             border:6px solid $primary-color-fade;
         }
         h3 {
-            font-family: Amatic SC;
+            font-family: $header-font;
             font-weight:700;
             font-size:2.5em;
             text-align:center;
@@ -214,6 +242,9 @@ $secondary-color-light:#dbfffa;
         line-height:1.5em;
         color:$secondary-color;
     }
+    .form-label {
+
+    }
   }
 
   app-portfolio .container {
@@ -239,7 +270,7 @@ $secondary-color-light:#dbfffa;
             display:block;
             color:$secondary-color;
             text-decoration:none;
-            font-family:Roboto;
+            font-family:$body-font;
             font-weight:100;
             font-size:1.25em;
             &:hover {
@@ -249,7 +280,7 @@ $secondary-color-light:#dbfffa;
         h4 {
             font-weight:100;
             font-size:1.75em;
-            font-family:Roboto;
+            font-family:$body-font;
             margin-bottom:1em;
         }
         .techs {
@@ -263,7 +294,7 @@ $secondary-color-light:#dbfffa;
     }
     .nav-tabs .nav-link {
         font-size:1.2em;
-        font-family:Roboto;
+        font-family:$body-font;
         font-weight:100;
         padding:1em 2.5em;
         background:#fafafa;

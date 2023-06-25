@@ -1,25 +1,35 @@
-<div class="container">
-    <div class="row p-5 d-flex">
-        <div class="col-12">
-            <div class="row pricing mb-5">
+<div class="container mb-5 p-5">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row d-flex pricing">
                 <div class="col-12">
-                    <div class="row">
-                        <div class="col-3 col-sm-1"></div>
-                        <div class="col-9 col-sm-10">
-                            <h1 class="text-center mb-5"><fa-icon [icon]="faCommentsDollar"></fa-icon><br/>Let's Talk!</h1>
-                            <p class="text-center">
-                                I understand that every project is unique and so should be the pricing. That's why I offer custom, flexible, and 
-                                creative pricing options that can fit your specific needs and budget. Whether it's a flat fee for a straightforward 
-                                project or hourly rates for more intricate work, I've got you covered. And don't sweat the tech stuff once the site's 
-                                live – I'm more than happy to discuss flexible ongoing support to keep your website running smoothly. With me, it's 
-                                not just about building a website; it's about creating your online presence exactly how you envision it, without 
-                                breaking the bank.
-                            </p>
-                        </div>
-                        <div class="col-3 col-sm-1"></div>
-                    </div>
+                    <h1 class="text-center mb-5"><fa-icon [icon]="faCommentsDollar"></fa-icon><br/>Let's Talk!</h1>
+                    <p class="text-center">
+                        I'm here to help bring your digital vision to life, all within your budget. My pricing is flexible and reasonable. After each project, you can count on me to stick around and help ensure your masterpiece is well supported. Ready to chat?
+                    </p>
                 </div>
             </div>
+            <form class="p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-12 mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter here...">
+                    </div>
+                    <div class="col-lg-6 col-12 mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter here...">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="3" placeholder="Enter your message or questions here..."></textarea>
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn btn-primary d-inline-block">Send Message</button>
+                    </div>
+                </div>
+            </form>
         </div>
+        <div class="col-2"></div>
     </div>
 </div>
