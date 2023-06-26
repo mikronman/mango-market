@@ -311,6 +311,24 @@ $header-font: Amatic SC;
     }
   }
 
+  app-benny .container {
+    .benny {
+        background:lavender;
+        border-radius:1em;
+    }
+    .img-container {
+        width:100%;
+        text-align: center;
+        img {
+            height:300px;
+            width:300px;
+            border-radius:50%;
+            border:white 5px solid;
+            margin:1em auto;
+        }
+    }
+  }
+
   app-footer .container {
     background:$primary-color-light;
     color:#333333;

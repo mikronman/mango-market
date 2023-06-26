@@ -16,6 +16,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { HomeComponent } from './components/home/home.component';
+import { BennyComponent } from './components/benny/benny.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomeComponent } from './components/home/home.component';
     PortfolioComponent,
     FooterComponent,
     PricingComponent,
-    HomeComponent
+    HomeComponent,
+    BennyComponent
   ],
   imports: [
     BrowserModule,
