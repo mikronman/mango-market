@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 // Modules
 import { BlogModule } from './blog/blog.module';
@@ -37,7 +38,8 @@ import { BennyComponent } from './components/benny/benny.component';
     AppRoutingModule,
     HttpClientModule,
     BlogModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

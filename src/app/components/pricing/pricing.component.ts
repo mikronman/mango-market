@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -8,45 +9,31 @@ import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./pricing.component.scss']
 })
 export class PricingComponent {
-
   faCommentsDollar = faCommentsDollar;
+  name!: string;
+  email!: string;
+  message!: string;
 
-  tiers = [
-    {
-      title: 'Beginner Services',
-      range: '$500 - $2,000',
-      time: '2 - 4 Weeks',
-      complexity: 'low',
-      description: `This includes very basic features, SEO setup, and often built using templates`,
-      example: 'Personal websites',
-      support: 'Paid separately' 
-    },
-    {
-      title: 'Intermediate Services',
-      range: '$2,000 - $7,500',
-      time: '1 - 3 Months',
-      complexity: 'Medium',
-      description: `This typically includes more complex work, robust online advertising, advanced functionality or integrations`,
-      example: 'eCommerce Websites',
-      support: 'Limited support included' 
-    },
-    {
-      title: 'Advanced Services',
-      range: '$7,500 - $20,000',
-      time: '3 - 6 Months',
-      complexity: 'High',
-      description: `This includes heavy integrations, advanced features and functionality, Advanced SEO optimization`,
-      example: 'eCommerce Websites',
-      support: 'Comprehensive support usually included' 
-    },
-    {
-      title: 'Enterprise Services',
-      range: '$20,000 +',
-      time: '6 + Months',
-      complexity: 'High',
-      description: `This includes highly heavy integrations, advanced features and functionality, Advanced SEO optimization`,
-      example: 'Autotrader',
-      support: 'Comprehensive support usually included' 
-    },
-  ]
+  constructor(private http: HttpClient) {}
+
+  sendEmail() {
+    const emailData = {
+      name: this.name,
+      email: this.email,
+      message: this.message
+    };
+
+    this.http.post<any>('https://mango-market-api.herokuapp.com/email/send', emailData)
+    .subscribe({
+      next: (response) => {
+        console.log(response.message); // Output: 'Email sent successfully'
+        // Handle any further actions after the email is sent
+      },
+      error: (error) => {
+        console.error('Error sending email:', error);
+        // Handle any errors that occur during the request
+      }
+    });
+  }
+
 }

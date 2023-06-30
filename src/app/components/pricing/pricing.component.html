@@ -1,7 +1,7 @@
-<div class="container mb-5 pb-5">
+<div class="container mb-5 p-5">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 col-12">
             <div class="row d-flex pricing">
                 <div class="col-12">
                     <h1 class="text-center mb-5"><fa-icon [icon]="faCommentsDollar"></fa-icon><br/>Let's Talk!</h1>
@@ -10,26 +10,26 @@
                     </p>
                 </div>
             </div>
-            <form class="mt-4">
+            <form class="mt-4" (submit)="sendEmail()">
                 <div class="row">
-                    <div class="col-lg-6 col-12 mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter here...">
-                    </div>
-                    <div class="col-lg-6 col-12 mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter here...">
-                    </div>
-                    <div class="col-12 mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="3" placeholder="Enter your message or questions here..."></textarea>
-                    </div>
-                    <div class="col-12 text-center mt-4">
-                        <button type="submit" class="btn btn-primary d-inline-block">Send Message</button>
-                    </div>
+                  <div class="col-lg-6 col-12 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter here..." [(ngModel)]="name" name="name">
+                  </div>
+                  <div class="col-lg-6 col-12 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter here..." [(ngModel)]="email" name="email">
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="3" placeholder="Enter your message or questions here..." [(ngModel)]="message" name="message"></textarea>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary d-inline-block">Send Message</button>
+                  </div>
                 </div>
-            </form>
+              </form>
         </div>
-        <div class="col-3"></div>
+        <div class="col-sm-3"></div>
     </div>
 </div>

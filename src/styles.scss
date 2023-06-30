@@ -26,6 +26,9 @@ $header-font: Amatic SC;
         font-family: $body-font;
         font-size:1.25em;
         font-weight:100;
+        @media (max-width:600px) {
+            font-size:1.1em;
+        }
     }
     label {
         font-family: $body-font;
@@ -51,6 +54,11 @@ $header-font: Amatic SC;
         font-size:1.75em;
         &:hover {
             background:$secondary-color-dark;
+        }
+    }
+    .p-5 {
+        @media (max-width:600px) {
+            padding:2em!important;
         }
     }
 }
@@ -149,6 +157,7 @@ $header-font: Amatic SC;
     padding: 6em;
     @media (max-width:600px) {
         padding: 2.5em;
+        background-color:rgba(255, 255, 255, 0.75);
     }
   }
 
@@ -170,7 +179,7 @@ $header-font: Amatic SC;
             margin-top:-100px;
         }
         @media (max-width:400px) {
-            margin-top:-75px;
+            display:none;
         }
       }
     
@@ -179,6 +188,7 @@ $header-font: Amatic SC;
         text-align:center;
         width:100%;
         margin:0 auto .5em auto;
+        padding:1em;
     }
     .value-card {
         padding:2.5em;
@@ -214,6 +224,9 @@ $header-font: Amatic SC;
         width: 400px;
         max-width:80%;
     }
+    @media (max-width:600px) {
+        padding-bottom:0;
+    }
   }
 
   app-services .container {
@@ -223,6 +236,10 @@ $header-font: Amatic SC;
         padding:1.5em;
         h1 {
             margin-bottom:.5em;
+        }
+        @media (max-width:600px) {
+            border:none;
+            padding:0;
         }
     }
     h3 {
@@ -241,6 +258,10 @@ $header-font: Amatic SC;
     fa-icon {
         line-height:1.5em;
         color:$secondary-color;
+    }
+    @media (max-width:600px) {
+       width:90%;
+       margin:0 auto;
     }
   }
 
@@ -320,13 +341,17 @@ $header-font: Amatic SC;
         width:100%;
         text-align: center;
         img {
-            height:300px;
             width:300px;
-            border-radius:50%;
+            max-width:100%;
+            border-radius:12px;
             border:white 5px solid;
             margin:1em auto;
         }
     }
+    @media (max-width:600px) {
+        width:90%;
+        margin:0 auto;
+     }
   }
 
   app-blog, app-blog-preview {
