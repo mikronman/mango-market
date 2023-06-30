@@ -329,6 +329,12 @@ $header-font: Amatic SC;
     }
   }
 
+  app-blog, app-blog-preview {
+    .blog-wrap {
+        margin-top:100px;
+    }
+  }
+
   app-footer .container {
     background:$primary-color-light;
     color:#333333;

@@ -14,14 +14,14 @@ const routes: Routes = [
   { path: '', component: BlogPreviewComponent },
 ];
 @NgModule({
-  declarations: [BlogComponent],
+  declarations: [BlogComponent, BlogPreviewComponent],
   imports: [
     HttpClientModule,
     CommonModule,
     ApolloModule,
     RouterModule.forChild(routes),
   ],
-  exports: [BlogComponent],
+  exports: [BlogComponent, BlogPreviewComponent],
   providers: [
     {
       provide: APOLLO_OPTIONS,
