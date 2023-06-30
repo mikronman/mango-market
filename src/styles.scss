@@ -195,7 +195,8 @@ $header-font: Amatic SC;
         width:100%;
         margin-bottom:3em;
         img {
-            height:250px;
+            width:250px;
+            max-width: 100%;
             border-radius:50%;
             text-align:center;
             margin:0 auto 2em auto;
