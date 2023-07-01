@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
+import { environment } from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-pricing',
@@ -24,7 +26,9 @@ export class PricingComponent {
       message: this.message
     };
 
-    this.http.post<any>('http://localhost:8000/email/send', emailData)
+    const apiUrl = environment.apiUrl;
+
+    this.http.post<any>(`${apiUrl}/email/send`, emailData)
     .subscribe({
       next: (response) => {
         console.log(response.message);
