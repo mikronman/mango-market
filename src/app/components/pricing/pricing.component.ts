@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
@@ -16,17 +15,19 @@ export class PricingComponent {
 
   constructor(private http: HttpClient) {}
 
-  sendEmail() {
+  sendEmail(event: Event) {
+    event.preventDefault();
+
     const emailData = {
       name: this.name,
       email: this.email,
       message: this.message
     };
 
-    this.http.post<any>('https://mango-market-api.herokuapp.com/email/send', emailData)
+    this.http.post<any>('http://localhost:8000/email/send', emailData)
     .subscribe({
       next: (response) => {
-        console.log(response.message); // Output: 'Email sent successfully'
+        console.log(response.message);
         // Handle any further actions after the email is sent
       },
       error: (error) => {
@@ -35,5 +36,4 @@ export class PricingComponent {
       }
     });
   }
-
 }
