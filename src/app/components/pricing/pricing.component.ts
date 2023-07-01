@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { faCommentsDollar } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '../../../environments/environment';
 
-
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
@@ -11,6 +10,10 @@ import { environment } from '../../../environments/environment';
 })
 export class PricingComponent {
   faCommentsDollar = faCommentsDollar;
+  
+  submitted = false;
+  submittedSuccess = false
+
   name!: string;
   email!: string;
   message!: string;
@@ -32,11 +35,11 @@ export class PricingComponent {
     .subscribe({
       next: (response) => {
         console.log(response.message);
-        // Handle any further actions after the email is sent
+        this.submitted = true;
+        this.submittedSuccess = true;
       },
       error: (error) => {
         console.error('Error sending email:', error);
-        // Handle any errors that occur during the request
       }
     });
   }
