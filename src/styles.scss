@@ -271,9 +271,12 @@ $header-font: Amatic SC;
   }
 
   app-pricing .container {
-    fa-icon {
+    .comment-icon {
         line-height:1.5em;
         color:$secondary-color;
+    }
+    .spinner-icon {
+        color:white;
     }
     @media (max-width:600px) {
        width:90%;
@@ -294,10 +297,18 @@ $header-font: Amatic SC;
         transform: translateY(0);
       }
 
-    .success-message {
+    .success-message, .error-message {
       margin-top: 2.5em;
-      color:forestgreen;
       text-align: center;;
+    }
+    .success-message {
+        color:forestgreen;
+    }
+    .error-message {
+        color:darkred;
+    }
+    .btn:disabled {
+        background-color:$secondary-color!important;
     }
 }
 

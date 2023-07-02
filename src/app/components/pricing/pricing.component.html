@@ -4,7 +4,7 @@
       <div class="col-sm-6 col-12">
         <div class="row d-flex pricing">
           <div class="col-12">
-            <h1 class="text-center mb-5"><fa-icon [icon]="faCommentsDollar"></fa-icon><br/>Let's Talk!</h1>
+            <h1 class="text-center mb-5"><fa-icon class="comment-icon" [icon]="faCommentsDollar"></fa-icon><br/>Let's Talk!</h1>
             <p class="text-center">
               I'm here to help bring your digital vision to life, all within your budget. My pricing is flexible and reasonable. After each project, you can count on me to stick around and help ensure your masterpiece is well supported. Ready to chat?
             </p>
@@ -25,12 +25,21 @@
               <textarea class="form-control" id="message" rows="3" placeholder="Enter your message or questions here..." [(ngModel)]="message" name="message"></textarea>
             </div>
             <div class="col-12 text-center mt-4">
-              <button type="submit" class="btn btn-primary d-inline-block">Send Message</button>
+                <button type="submit" class="btn btn-primary d-inline-block" [disabled]="submitting">
+                    <ng-container *ngIf="!submitting; else loaderContent">{{ buttonText }}</ng-container>
+                    <ng-template class="loading-button" #loaderContent>
+                        <fa-icon class="spinner-icon" [icon]="faSpinner" class="fa-spin"></fa-icon>
+                        Sending...
+                    </ng-template>
+                </button>           
             </div>
-            <div class="message-container" [ngClass]="{'show-message': submittedSuccess}">
-              <div class="success-message"><p>
-                Message recieved! I'll be in touch with you soon!
-              </p></div>
+            <div class="message-container" [ngClass]="{'show-message': submittedSuccess || hasError}">
+                <div class="success-message" *ngIf="submittedSuccess && !hasError">
+                    <p>Message received! I'll be in touch with you soon!</p>
+                </div>
+                <div class="error-message" *ngIf="hasError">
+                    <p>Oops, we have an error. Please try sending again, or just email me directly at mkleczkajr@gmail.com.</p>
+                </div>
             </div>
           </div>
         </form>
