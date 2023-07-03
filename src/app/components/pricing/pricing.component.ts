@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { faCommentsDollar, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { environment } from '../../../environments/environment';
 
+declare var gtag: Function;
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
@@ -47,7 +48,10 @@ export class PricingComponent {
           console.log(response.message);
           this.submitted = true;
           this.submittedSuccess = true;
-          // Handle any further actions after the email is sent
+          // Track conversion
+          gtag('event', 'conversion', {
+            send_to: 'AW-726570860/hy7-CJmUn7YYEOyuutoC'
+          });
         },
         error: (error) => {
           console.error('Error sending email:', error);
