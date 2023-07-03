@@ -9,9 +9,10 @@ import { BlogComponent } from './blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogPreviewComponent } from './blog-preview/blog-preview.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
-  { path: '', component: BlogPreviewComponent },
+  {path: '', component: BlogPreviewComponent}
 ];
 @NgModule({
   declarations: [BlogComponent, BlogPreviewComponent],
@@ -19,6 +20,7 @@ const routes: Routes = [
     HttpClientModule,
     CommonModule,
     ApolloModule,
+    FontAwesomeModule,
     RouterModule.forChild(routes),
   ],
   exports: [BlogComponent, BlogPreviewComponent],

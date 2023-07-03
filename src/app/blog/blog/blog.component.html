@@ -1,12 +1,22 @@
-<h1>Contentful Blog Data</h1>
-<p>This is a work in progress testing with headless CMS. What's below is pulled dynamically from Contentful.</p>
-
-<div *ngIf="!blogPosts || blogPosts.length === 0">
-    <p>Loading blog data...</p>
-</div>
-  
-  <div *ngFor="let post of blogPosts">
-    <h2>{{ post.blogTitle }}</h2>
-    <!-- <p *ngIf="post.author">By: {{ post.author.name }}</p>
-    <div [innerHTML]="post.body"></div> -->
+<div class="container">
+  <div class="blog-wrap p-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="blog-post" *ngIf="post">
+          <button class="btn btn-primary" (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> Back</button>
+          <div class="post-img-container">
+            <img *ngIf="post.blogImage" [src]="post.blogImage.url" [alt]="post.blogImage.description">
+          </div>
+          <h2>{{ post.blogTitle }}</h2>
+          <div *ngFor="let paragraph of post.blogBody.json.content">
+            <p>{{ paragraph.content[0].value }}</p>
+          </div>
+          <div class="text-muted mt-5">
+            <p><i>Comments are not available at this time.</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+

@@ -7,7 +7,6 @@ import { Apollo, gql } from 'apollo-angular';
 @Injectable({
   providedIn: 'root',
 })
-
 export class BlogService {
   constructor(private contentfulService: ContentfulService, private apollo: Apollo) {}
 
@@ -19,7 +18,17 @@ export class BlogService {
             sys {
               id
             }
+            blogImage {
+              url
+              description
+              sys {
+                id
+              }
+            }
             blogTitle
+            shortDescription {
+              json
+            }
           }
         }
       }
@@ -31,4 +40,38 @@ export class BlogService {
       })
       .valueChanges.pipe(map((result) => result.data.blogPostCollection.items));
   }
+
+  getBlogPost(id: string): Observable<any> {
+    const blogPostQuery = gql`
+      query blogPostEntryQuery($id: String!) {
+        blogPost(id: $id) {
+          sys {
+            id
+          }
+          blogImage {
+            url
+            description
+            sys {
+              id
+            }
+          }
+          blogTitle
+          blogBody {
+            json
+          }
+        }
+      }
+    `;
+  
+    return this.apollo
+      .watchQuery<any>({
+        query: blogPostQuery,
+        variables: {
+          id: id,
+        },
+      })
+      .valueChanges.pipe(map((result) => result.data.blogPost));
+  }
+   
 }
+

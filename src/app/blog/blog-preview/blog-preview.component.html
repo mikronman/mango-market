@@ -1,15 +1,19 @@
-<div id="blog">
-    <div class="container">
-        <div class="blog-wrap">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10 p-5 mb-5 mt-5 text-center">
-                    <h1>Blog Coming Soon</h1>
-                    <p>Currently my custom blog module is under construction. Stay tuned for updates!
-                    </p>
+<div class="container">
+    <div class="blog-wrap p-5">
+        <h1>Nuggets of Wisdom</h1>
+        <p class="mb-5">The posts below are small, digestible bits of perspective covering common questions and concerns around working with web developers.</p>
+        <div class="row">
+            <div class="preview-item col-md-4 col-sm-6 col-12" *ngFor="let post of blogPosts">
+                <div class="preview-img-container">
+                    <img *ngIf="post.blogImage" [src]="post.blogImage.url" [alt]="post.blogImage.description">
                 </div>
-                <div class="col-1"></div>
+                <h2>{{ post.blogTitle }}</h2>
+                <div *ngFor="let paragraph of post.shortDescription.json.content">
+                    <p>{{ paragraph.content[0].value }}</p>
+                </div>
+                <a [routerLink]="['/blog/post', post.sys.id]">Read More</a>
             </div>
         </div>
     </div>
 </div>
+

@@ -61,6 +61,10 @@ $header-font: Amatic SC;
             padding:2em!important;
         }
     }
+    .text-muted p {
+        color:#AAAAAA;
+        font-size:1em;
+    }
 }
 .row {
     @media (max-width:600px) {
@@ -383,6 +387,10 @@ $header-font: Amatic SC;
   }
 
   app-benny .container {
+    padding-top:5em;
+    padding-bottom:5em;
+    margin-bottom:5em;
+    margin-top:5em;
     .benny {
         background:lavender;
         border-radius:1em;
@@ -405,8 +413,54 @@ $header-font: Amatic SC;
   }
 
   app-blog, app-blog-preview {
+    .container {
+        margin-bottom:5em;
+    }
     .blog-wrap {
         margin-top:100px;
+        position:relative;
+        h2 {
+            margin-top:1em;
+            margin-bottom:1em;
+        }
+        .preview-img-container, .post-img-container {
+            height: 300px;
+            overflow: hidden;
+            margin-bottom:1.5em;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        button {
+           position:absolute;
+           border-bottom:10px solid white;
+           border-right:10px solid white;
+           border-radius:0;
+           &:hover {
+            border-color:white;
+           }
+        }
+    }
+    .preview-item {
+        background:#fafafa;
+        padding:1.5em;
+        border:5px solid white;
+        cursor:pointer;
+        &:hover {
+            background:#f5f5f5;
+        }
+        a {
+            text-decoration:none;
+            color:$secondary-color;
+            font-size:1.1em;
+        }
+    }
+    .blog-post {
+        width:1024px;
+        max-width:100%;
+        margin:0 auto;
     }
   }
 
