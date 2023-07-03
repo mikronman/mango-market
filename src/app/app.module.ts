@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { HomeComponent } from './components/home/home.component';
 import { BennyComponent } from './components/benny/benny.component';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BennyComponent } from './components/benny/benny.component';
     FooterComponent,
     PricingComponent,
     HomeComponent,
-    BennyComponent
+    BennyComponent,
+    TechnologiesComponent
   ],
   imports: [
     BrowserModule,
