@@ -387,13 +387,10 @@ $header-font: Amatic SC;
   }
 
   app-benny .container {
-    padding-top:5em;
-    padding-bottom:5em;
-    margin-bottom:5em;
-    margin-top:5em;
     .benny {
+        padding:5em 2em;
+        margin-top:5em;
         background:lavender;
-        border-radius:1em;
     }
     .img-container {
         width:100%;
@@ -406,8 +403,9 @@ $header-font: Amatic SC;
             margin:1em auto;
         }
     }
-    @media (max-width:600px) {
-        width:90%;
+     p {
+        width:750px;
+        max-width:100%;
         margin:0 auto;
      }
   }
