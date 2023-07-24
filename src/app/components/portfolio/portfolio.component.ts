@@ -9,6 +9,16 @@ export class PortfolioComponent {
 
   tabs = [
     {
+      name: 'The Kindness Code',
+      logo: '../../assets/img/kcf_logo.svg',
+      url: 'https://www.thekindnesscodefoundation.org/',
+      image: '../../assets/img/kcf_image.png',
+      title: 'Non-Profit',
+      headline: 'An experience inspired by the life of a kind young man',
+      techs: 'Angular, Prismic CMS, Hubspot',
+      body: `This non-profit's mission combines concepts of kindness and humanity, and reinforces principles through interactive AI technology (currently in development).`
+    },
+    {
       name: 'Magnolia Celebrates',
       logo: '../../assets/img/magnolia_logo.png',
       url: 'https://www.magnoliacelebrates.com/',
@@ -37,6 +47,16 @@ export class PortfolioComponent {
       headline: 'An artistic experience that inspires excellence and precision',
       techs: 'Custom Angular Application with Prismic CMS',
       body: `This website offers a wealth of information on a variety of cosmetic and reconstructive procedures, facilitating patient education and informed decision-making. With its clean, professional design and easy-to-navigate structure, the site reflects the high-quality care and expertise offered by Dr. Zubowicz.`
+    },
+    {
+      name: 'Precision Painting',
+      logo: '',
+      url: 'https://www.precision-paint-172168bbfa38.herokuapp.com/',
+      image: '../../assets/img/precision_logo.png',
+      title: 'Painter',
+      headline: 'An clean experience for a sterling company.',
+      techs: 'PHP, HTML, CSS, Javascript, Bootstrap',
+      body: `This website presents it's services in a clean and organized way with a clear call to action.`
     }
   ];
   activeTab = this.tabs[0];
