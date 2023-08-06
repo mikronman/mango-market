@@ -51,7 +51,7 @@ export class PortfolioComponent {
     {
       name: 'Precision Painting',
       logo: '',
-      url: 'https://www.precision-paint-172168bbfa38.herokuapp.com/',
+      url: 'https://precision-paint-172168bbfa38.herokuapp.com/',
       image: '../../assets/img/precision_logo.png',
       title: 'Painter',
       headline: 'An clean experience for a sterling company.',
