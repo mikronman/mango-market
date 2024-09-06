@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { BlogPreviewComponent } from './blog/blog-preview/blog-preview.component';
 import { BlogComponent } from './blog/blog/blog.component';
+import { VacationComponent } from './vacation/vacation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogPreviewComponent },
+  { path: 'vacation', component: VacationComponent },
   { path: 'blog/post/:id', component: BlogComponent },
   { path: '**', redirectTo: '' }
 ];

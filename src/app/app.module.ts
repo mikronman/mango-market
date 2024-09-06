@@ -19,6 +19,7 @@ import { PricingComponent } from './components/pricing/pricing.component';
 import { HomeComponent } from './components/home/home.component';
 import { BennyComponent } from './components/benny/benny.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { VacationComponent } from './vacation/vacation.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TechnologiesComponent } from './components/technologies/technologies.co
     PricingComponent,
     HomeComponent,
     BennyComponent,
-    TechnologiesComponent
+    TechnologiesComponent,
+    VacationComponent
   ],
   imports: [
     BrowserModule,
