@@ -7,7 +7,7 @@ import { interval, Subscription } from 'rxjs';
   styleUrls: ['./vacation.component.scss']
 })
 export class VacationComponent implements OnInit, OnDestroy  {
-  targetDate: Date = new Date('2024-09-21T08:00:00-04:00'); // Set the target date and time
+  targetDate: Date = new Date('2025-09-20T08:00:00-04:00'); // Set the target date and time
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;
