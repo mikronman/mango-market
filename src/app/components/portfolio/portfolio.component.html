@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row p-5">
       <div class="col-12">
         <h1>My Work</h1>
@@ -20,7 +20,7 @@
                   <img class="logo" src="{{tab.logo}}"/>
                   <h4>{{tab.headline}}</h4>
                   <p>{{tab.body}}</p>
-                  <!-- <p class="techs">Technology: {{tab.techs}}</p> -->
+                  <p class="techs">Technology: {{tab.techs}}</p>
                   <a href="{{tab.url}}" target=_blank>Visit {{tab.name}}</a>
                 </div>
               </div>
@@ -29,5 +29,40 @@
         </div>
       </div>
     </div>
+  </div> -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>My Work</h1>
+        <p>Here are a few examples of my work I am happy to showcase.</p>
+        <br/>
+        <div class="row">
+          <div class="col-12 mb-4" *ngFor="let tab of tabs">
+            <div class="row align-items-stretch">
+              <div class="col-12 d-flex flex-column justify-content-center p-3">
+                <div class="img-container">
+                  <img class="hero img-fluid" src="{{tab.image}}" alt="{{tab.title}}">
+                </div>
+              </div>
+              <div class="col-12 d-flex flex-column justify-content-center">
+                <div class="body-wrap row">
+                  <div class="col-12">
+                    <img class="logo mb-2" src="{{tab.logo}}" alt="{{tab.title}} Logo">
+                  </div>
+                  <div class="col-12">
+                    <h4>{{tab.headline}}</h4>
+                    <p>{{tab.body}}</p>
+                    <a class="btn btn-primary" href="{{tab.url}}" target="_blank">Visit {{tab.name}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  
+
   
