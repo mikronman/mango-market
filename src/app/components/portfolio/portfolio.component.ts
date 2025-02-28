@@ -54,7 +54,7 @@ export class PortfolioComponent {
       url: 'https://precision-paint-172168bbfa38.herokuapp.com/',
       image: '../../assets/img/painted_room.jpg',
       title: 'Painter',
-      headline: 'An clean experience for a sterling company.',
+      headline: 'A clean experience for a sterling company.',
       techs: 'PHP, HTML, CSS, Javascript, Bootstrap',
       body: `This website presents it's services in a clean and organized way with a clear call to action.`
     }
