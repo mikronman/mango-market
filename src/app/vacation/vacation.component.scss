@@ -35,10 +35,13 @@
   }
 
   .countdown-wrap .img-contain {
-    width:100%;
-    text-align: center;
+    width:614px;
+    max-width:100%;
+    margin:0 auto;
     img {
-        max-width: 100%;
+        width:50%;
+        height:200px;
+        border:2px solid white;
     }
   }
   
